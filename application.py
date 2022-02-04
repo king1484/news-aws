@@ -2,9 +2,9 @@ from flask import Flask,request,jsonify
 from newspaper import Article
 from deep_translator import GoogleTranslator
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/", methods=["POST"])
+@application.route("/", methods=["POST"])
 def get():
     url = request.form.get("url")
     lang = request.form.get("lang")
@@ -32,4 +32,4 @@ def get():
 
 
 if __name__ == "__main__":
-    app.run()
+    application.run()
