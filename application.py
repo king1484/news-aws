@@ -4,6 +4,10 @@ from deep_translator import GoogleTranslator
 
 application = Flask(__name__)
 
+@application.route("/", methods=["GET"])
+def data():
+    return "ok"
+
 @application.route("/", methods=["POST"])
 def get():
     url = request.form.get("url")
